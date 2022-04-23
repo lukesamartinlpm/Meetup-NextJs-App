@@ -12,8 +12,6 @@ const NewMeetup = () => {
       body: JSON.stringify(meetupData),
     });
 
-    const data = await response.json();
-
     router.push("/");
   };
 

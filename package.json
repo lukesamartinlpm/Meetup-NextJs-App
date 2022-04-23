@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "env-cmd -f ./config/dev.env next dev",
+    "prod": "env-cmd -f ./config/prod.env next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "env-cmd": "^10.1.0",
     "mongodb": "^4.5.0",
     "next": "12.1.5",
     "react": "18.0.0",

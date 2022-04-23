@@ -3,7 +3,7 @@ import { MongoClient } from "mongodb";
 async function handler(req, res) {
   if (req.method === "POST") {
     const data = req.body;
-    const client = await MongoClient.connect("mongodb://127.0.0.1:27017");
+    const client = await MongoClient.connect(process.env.MONGODB);
     const { title, image, address, description } = data;
 
     const db = client.db();

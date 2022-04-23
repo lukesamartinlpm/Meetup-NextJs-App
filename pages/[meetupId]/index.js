@@ -19,7 +19,7 @@ const MeetupDetailPage = (props) => {
 };
 
 export async function getStaticPaths() {
-  const client = await MongoClient.connect("mongodb://127.0.0.1:27017");
+  const client = await MongoClient.connect(process.env.MONGODB);
   const db = client.db();
   const meetupsCollection = db.collection("meetups");
 
@@ -39,7 +39,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const meetupId = context.params.meetupId;
-  const client = await MongoClient.connect("mongodb://127.0.0.1:27017");
+  const client = await MongoClient.connect(process.env.MONGODB);
   const db = client.db();
   const meetupsCollection = db.collection("meetups");
 
